@@ -9,13 +9,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 public class Driver {
-
-    //private static WebDriver driver;
-
+    
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-
-    public static void setDriver(){
+    public static void setDriver() {
 
         WebDriverManager.chromedriver().setup();
         driver.set(new ChromeDriver(setUpOptions()));
@@ -28,6 +25,10 @@ public class Driver {
     }
 
     private static ChromeOptions setUpOptions() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("window-size=2000,3000");
+        options.addArguments("--force-device-scale-factor=0.75");
+        return options;
 
     }
 }
