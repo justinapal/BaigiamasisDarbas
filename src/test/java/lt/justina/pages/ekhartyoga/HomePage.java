@@ -12,7 +12,5 @@ public class HomePage {
         Common.clickElement(Locators.EkhartYoga.Home.linkSignIn);
     }
 
-    public static void enterInputEmail(String emailInput) {
-        Common.sendKeysToElement(emailInput, Locators.EkhartYoga.LogIn.inputUsername);
-    }
+
 }
