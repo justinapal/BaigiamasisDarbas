@@ -12,5 +12,7 @@ public class HomePage {
         Common.clickElement(Locators.EkhartYoga.Home.linkSignIn);
     }
 
-
+    public static String readUsernameGreetingMessage() {
+        return Common.getElementText(Locators.EkhartYoga.Home.dashboardHeader);
+    }
 }
