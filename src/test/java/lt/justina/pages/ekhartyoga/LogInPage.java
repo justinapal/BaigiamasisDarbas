@@ -9,5 +9,8 @@ public class LogInPage {
         Common.sendKeysToElement(emailInput, Locators.EkhartYoga.LogIn.inputUsername);
     }
 
+    public static void enterInputPassword(String passwordInput) {
+        Common.sendKeysToElement(passwordInput,Locators.EkhartYoga.LogIn.inputPassword);
     }
+}
 
