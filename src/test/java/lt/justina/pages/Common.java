@@ -22,4 +22,7 @@ public class Common {
     public static void clickElement(By locator) {
         getElement(locator).click();
     }
+
+    public static void sendKeysToElement(String keys, By locator) {getElement(locator).sendKeys();
+    }
 }
