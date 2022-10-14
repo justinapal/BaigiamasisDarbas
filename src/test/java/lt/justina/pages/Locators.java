@@ -11,9 +11,11 @@ public class Locators {
             public static By linkSignIn = By.xpath("(//a[text()='Sign in' and @href='/log-in'])[1]");
         }
 
-        public class LogIn{
+        public class LogIn {
 
             public static By inputUsername = By.xpath("//input[@id='Username']");
+
+            public static By inputPassword = By.xpath("//input[@id='password-field']");
         }
     }
 }
