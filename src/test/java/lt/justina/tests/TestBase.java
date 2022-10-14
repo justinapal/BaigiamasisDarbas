@@ -9,15 +9,14 @@ import org.testng.annotations.BeforeMethod;
 public class TestBase {
 
     @BeforeMethod
-public void setUp(){
+    public void setUp() {
         Common.setUpDriver();
-}
-
+    }
 
 
     @AfterMethod
-public void close(){
-
-}
+    public void tearDown() {
+        Common.closeDriver();
+    }
 
 }
