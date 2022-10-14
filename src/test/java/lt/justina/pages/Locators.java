@@ -9,6 +9,8 @@ public class Locators {
         public class Home {
 
             public static By linkSignIn = By.xpath("(//a[text()='Sign in' and @href='/log-in'])[1]");
+
+            public static By dashboardHeader = By.xpath("(//text()[contains(.,'Justina')])[1]");
         }
 
         public class LogIn {
