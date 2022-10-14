@@ -8,4 +8,6 @@ public class Common {
         Driver.setDriver();
     }
 
+    public static void closeDriver() {Driver.closeDriver();
+    }
 }
