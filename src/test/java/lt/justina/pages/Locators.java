@@ -16,6 +16,8 @@ public class Locators {
             public static By inputUsername = By.xpath("//input[@id='Username']");
 
             public static By inputPassword = By.xpath("//input[@id='password-field']");
+
+            public static By buttonLogin = By.xpath("//button[@value='login']");
         }
     }
 }
