@@ -31,12 +31,11 @@ public class Locators {
         public class Classes {
 
             public static By optionsButtonDropDown = By.xpath(
-                    "//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa']");
+                    "(//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa'])[1]");
 
             public static By spanAddToFavourites =
                     By.xpath(
-                            "//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa']//" +
-                                    "button//span[contains(text(), 'Add to favourites')]"
+                            "//button//span[contains(text(),'Add to favourites')]"
                     );
 
             public static By linkFavourites = By.xpath("//a[contains(text(), 'Favourites')]");
