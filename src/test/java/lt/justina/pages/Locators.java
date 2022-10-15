@@ -38,6 +38,8 @@ public class Locators {
                             "//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa']//" +
                                     "button//span[contains(text(), 'Add to favourites')]"
                     );
+
+            public static By linkFavourites = By.xpath("//a[contains(text(), 'Favourites')]");
         }
 
     }
