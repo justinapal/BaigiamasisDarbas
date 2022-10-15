@@ -15,4 +15,8 @@ public class HomePage {
     public static String readUsernameGreetingMessage() {
         return Common.getElementText(Locators.EkhartYoga.Home.dashboardHeader);
     }
+
+    public static void clickElementToOpenClasses() {
+        Common.clickElement(Locators.EkhartYoga.Home.linkClasses);
+    }
 }
