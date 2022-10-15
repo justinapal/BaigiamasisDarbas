@@ -33,6 +33,10 @@ public class ClassesPage {
         Common.sendKeysToElement(searchText, Locators.EkhartYoga.Classes.inputSearch);
     }
 
+    public static void clickSearchIcon() {
+        Common.clickElement(Locators.EkhartYoga.Classes.divSearchIcon);
+    }
+
    /* public static void clickSelectInputTeachers() {
         Common.clickElement(Locators.EkhartYoga.Classes.selectInputTeachers);
     }*/
