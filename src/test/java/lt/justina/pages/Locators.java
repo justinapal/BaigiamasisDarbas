@@ -43,7 +43,9 @@ public class Locators {
             public static By linkClassInFavourites = By.xpath(
                     "//a[@id='card-item-485e379e-6d2f-434f-826a-7d27412977fa']");
 
-            public static By selectInputTeachers = By.xpath("//div[@id='select-input-teachers']");
+            //public static By selectInputTeachers = By.xpath("//div[@id='select-input-teachers']");
+
+            public static By inputSearch = By.xpath("//input[@placeholder='Search']");
         }
     }
 }
