@@ -11,6 +11,8 @@ public class Locators {
             public static By linkSignIn = By.xpath("(//a[text()='Sign in' and @href='/log-in'])[1]");
 
             public static By dashboardHeader = By.xpath("(//h2)[1]");
+
+            public static By linkClasses = By.xpath("//a[@href='/classes/browse_all?page=1']");
         }
 
         public class LogIn {
@@ -25,6 +27,12 @@ public class Locators {
                     "//li[text()='Invalid username or password.']"
             );
         }
+
+        public class Classes{
+
+
+        }
+
     }
 }
 
