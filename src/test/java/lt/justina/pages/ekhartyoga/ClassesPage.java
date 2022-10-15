@@ -13,4 +13,8 @@ public class ClassesPage {
     public static void clickElementToAddToFavourites() {
         Common.clickElement(Locators.EkhartYoga.Classes.spanAddToFavourites);
     }
+
+    public static void clickElementFavourites() {
+        Common.clickElement(Locators.EkhartYoga.Classes.linkFavourites);
+    }
 }
