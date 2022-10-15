@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 
 public class Locators {
 
-    public class EkhartYoga {
+    public static class EkhartYoga {
 
-        public class Home {
+        public static class Home {
 
             public static By linkSignIn = By.xpath("(//a[text()='Sign in' and @href='/log-in'])[1]");
 
@@ -15,7 +15,7 @@ public class Locators {
             public static By linkClasses = By.xpath("//a[@href='/classes/browse_all?page=1']");
         }
 
-        public class LogIn {
+        public static class LogIn {
 
             public static By inputUsername = By.xpath("//input[@id='Username']");
 
@@ -28,8 +28,10 @@ public class Locators {
             );
         }
 
-        public class Classes{
+        public class Classes {
 
+            public static By optionsButtonDropDown = By.xpath(
+                    "//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa']");
 
         }
 
