@@ -33,6 +33,11 @@ public class Locators {
             public static By optionsButtonDropDown = By.xpath(
                     "//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa']");
 
+            public static By spanAddToFavourites =
+                    By.xpath(
+                            "//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa']//" +
+                                    "button//span[contains(text(), 'Add to favourites')]"
+                    );
         }
 
     }
