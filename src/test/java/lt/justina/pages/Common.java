@@ -4,6 +4,9 @@ import lt.justina.utils.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Common {
 
     public static void setUpDriver() {
@@ -27,10 +30,24 @@ public class Common {
     }
 
     public static void sendKeysToElement(String keys, By locator) {
-        getElement(locator).sendKeys();
+        getElement(locator).sendKeys(keys);
     }
 
     public static String getElementText(By locator) {
-       return getElement(locator).getText();
+        return getElement(locator).getText();
+    }
+
+    public static List<WebElement> getElements(By locator) {
+        return Driver.getDriver().findElements(locator);
+    }
+
+    public static List<Boolean> getStatusIfChosenElementsAreDisplayed(By locator) {
+        List<WebElement> elements = Common.getElements(locator);
+        List<Boolean> presence = new ArrayList<>();
+
+        for (WebElement element : elements) {
+            presence.add(element.isDisplayed());
+        }
+        return presence;
     }
 }
