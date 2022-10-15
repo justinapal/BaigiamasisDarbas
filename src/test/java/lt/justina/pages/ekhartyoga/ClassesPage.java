@@ -9,4 +9,8 @@ public class ClassesPage {
                 Locators.EkhartYoga.Classes.optionsButtonDropDown
         );
     }
+
+    public static void clickElementToAddToFavourites() {
+        Common.clickElement(Locators.EkhartYoga.Classes.spanAddToFavourites);
+    }
 }
