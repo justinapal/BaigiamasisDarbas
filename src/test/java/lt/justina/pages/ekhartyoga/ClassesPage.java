@@ -29,7 +29,11 @@ public class ClassesPage {
         return true;
     }
 
-    public static void clickSelectInputTeachers() {
-        Common.clickElement(Locators.EkhartYoga.Classes.selectInputTeachers);
+    public static void enterSearchInput(String searchText) {
+        Common.sendKeysToElement(searchText, Locators.EkhartYoga.Classes.inputSearch);
     }
+
+   /* public static void clickSelectInputTeachers() {
+        Common.clickElement(Locators.EkhartYoga.Classes.selectInputTeachers);
+    }*/
 }
