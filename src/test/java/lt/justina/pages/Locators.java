@@ -46,6 +46,10 @@ public class Locators {
             //public static By selectInputTeachers = By.xpath("//div[@id='select-input-teachers']");
 
             public static By inputSearch = By.xpath("//input[@placeholder='Search']");
+
+            public static By divSearchIcon = By.xpath(
+                    "//div[contains(@class, 'text-with-icon search-input-wrapper__icon search')]"
+            );
         }
     }
 }
