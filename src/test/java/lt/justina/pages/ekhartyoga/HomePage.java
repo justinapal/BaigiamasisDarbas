@@ -24,4 +24,8 @@ public class HomePage {
         Common.waitForElementUntilVisibilityChanges(Locators.EkhartYoga.Home.spanCookies);
         Common.clickElement(Locators.EkhartYoga.Home.buttonAcceptCookies);
     }
+
+    public static void clickElementToOpenPlaylists() {
+        Common.clickElement(Locators.EkhartYoga.Home.linkPlaylists);
+    }
 }
