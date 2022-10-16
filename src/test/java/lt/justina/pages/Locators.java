@@ -65,6 +65,8 @@ public class Locators {
         public class Playlists{
 
             public static By divInputFeeling = By.xpath("//div[@id='select-input-feeling']");
+
+            public static By spanCollapsibleGrounding = By.xpath("//span[normalize-space()='Grounding']");
         }
     }
 }
