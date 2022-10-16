@@ -21,12 +21,7 @@ public class ClassesPage {
     }
 
     public static boolean checkIsClassPresentInFavourites(boolean isClassPresent) {
-        List<Boolean> presenceList = Common.getStatusIfChosenElementsAreDisplayed(Locators.EkhartYoga.Classes.linkClassInFavourites);
-
-        for (boolean presence : presenceList) {
-            if (isClassPresent != presence) return false;
-        }
-        return true;
+        return Common.getStatusIfElementIsDisplayed(Locators.EkhartYoga.Classes.linkClassInFavourites);
     }
 
     public static void enterSearchInput(String searchText) {
@@ -40,10 +35,5 @@ public class ClassesPage {
     public static String readSearchResultMessage() {
         return Common.getElementText(Locators.EkhartYoga.Classes.searchResultMessage);
     }
-
-
-
-   /* public static void clickSelectInputTeachers() {
-        Common.clickElement(Locators.EkhartYoga.Classes.selectInputTeachers);
-    }*/
 }
+
