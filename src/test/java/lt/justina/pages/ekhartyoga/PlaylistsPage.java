@@ -12,4 +12,8 @@ public class PlaylistsPage extends TestBase {
     public static void checkAttributeGrounding() {
         Common.clickElement(Locators.EkhartYoga.Playlists.spanCollapsibleGrounding);
     }
+
+    public static void clickDropDownInputLevel() {
+        Common.clickElement(Locators.EkhartYoga.Playlists.divInputLevels);
+    }
 }
