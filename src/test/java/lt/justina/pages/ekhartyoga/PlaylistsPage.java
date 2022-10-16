@@ -8,4 +8,8 @@ public class PlaylistsPage extends TestBase {
     public static void clickDropDownInputFeeling() {
         Common.clickElement(Locators.EkhartYoga.Playlists.divInputFeeling);
     }
+
+    public static void checkAttributeGrounding() {
+        Common.clickElement(Locators.EkhartYoga.Playlists.spanCollapsibleGrounding);
+    }
 }
