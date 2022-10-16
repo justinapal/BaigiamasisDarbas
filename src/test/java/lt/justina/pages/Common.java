@@ -2,8 +2,13 @@ package lt.justina.pages;
 
 import lt.justina.utils.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,11 +48,17 @@ public class Common {
 
     public static List<Boolean> getStatusIfChosenElementsAreDisplayed(By locator) {
         List<WebElement> elements = Common.getElements(locator);
-        List<Boolean> presence = new ArrayList<>();
+        List<Boolean> status = new ArrayList<>();
 
         for (WebElement element : elements) {
-            presence.add(element.isDisplayed());
+            status.add(element.isDisplayed());
         }
-        return presence;
+        return status;
+    }
+
+    public static void waitForElementUntilVisibilityChanges(By locator) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(8));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }
