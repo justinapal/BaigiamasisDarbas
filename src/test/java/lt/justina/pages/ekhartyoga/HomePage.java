@@ -19,4 +19,9 @@ public class HomePage {
     public static void clickElementToOpenClasses() {
         Common.clickElement(Locators.EkhartYoga.Home.linkClasses);
     }
+
+    public static void acceptPrivacyConfirmation() {
+        Common.waitForElementUntilVisibilityChanges(Locators.EkhartYoga.Home.spanCookies);
+        Common.clickElement(Locators.EkhartYoga.Home.buttonAcceptCookies);
+    }
 }
