@@ -1,8 +1,9 @@
 package lt.justina.tests.ekhartyoga;
 
 import lt.justina.pages.ekhartyoga.HomePage;
-import lt.justina.pages.ekhartyoga.LogInPage;
+import lt.justina.pages.ekhartyoga.PlaylistsPage;
 import lt.justina.tests.TestBase;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,21 +12,24 @@ public class PlaylistsTest extends TestBase {
     @Override
     public void setUp() {
         super.setUp();
-        HomePage.open("https://www.ekhartyoga.com/");
-
-        String emailInput = "pal.justina@gmail.com";
-        String passwordInput = "insane1169";
-
-        HomePage.clickSignInButton();
-        LogInPage.enterInputEmail(emailInput);
-        LogInPage.enterInputPassword(passwordInput);
-        LogInPage.clickSignInButtonAfterCompletedInputFields();
-        HomePage.acceptPrivacyConfirmation();
         HomePage.clickElementToOpenPlaylists();
     }
 
     @Test
-    private void testSearchingPlaylistsByDropDownAttributes(){
+    private void testSearchingPlaylistsByDropDownAttributes() {
+        boolean expectedStatusArePlaylistsFiltered = true;
+        boolean actualStatusPlaylistsFiltered;
 
+        PlaylistsPage.clickDropDownInputFeeling();
+        PlaylistsPage.checkAttributeGrounding();
+        PlaylistsPage.clickButtonApply();
+        PlaylistsPage.clickDropDownInputLevel();
+        PlaylistsPage.checkAttributeBeginner();
+        PlaylistsPage.clickButtonApply();
+
+        actualStatusPlaylistsFiltered =
+                PlaylistsPage.checkIfPlaylistsAreFilteredAndDisplayed(expectedStatusArePlaylistsFiltered);
+
+        Assert.assertEquals(actualStatusPlaylistsFiltered, expectedStatusArePlaylistsFiltered);
     }
 }
