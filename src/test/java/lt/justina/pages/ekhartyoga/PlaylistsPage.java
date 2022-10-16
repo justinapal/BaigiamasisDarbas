@@ -20,4 +20,8 @@ public class PlaylistsPage extends TestBase {
     public static void checkAttributeBeginner() {
         Common.clickElement(Locators.EkhartYoga.Playlists.spanCollapsibleBeginner);
     }
+
+    public static void clickButtonApply() {
+        Common.clickElement(Locators.EkhartYoga.Playlists.buttonCollapsibleApply);
+    }
 }
