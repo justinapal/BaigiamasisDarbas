@@ -14,17 +14,7 @@ public class ClassesTest extends TestBase {
     @Override
     public void setUp() {
         super.setUp();
-        HomePage.open("https://www.ekhartyoga.com/");
-
-        String emailInput = "pal.justina@gmail.com";
-        String passwordInput = "insane1169";
-
-        HomePage.clickSignInButton();
-        LogInPage.enterInputEmail(emailInput);
-        LogInPage.enterInputPassword(passwordInput);
-        LogInPage.clickSignInButtonAfterCompletedInputFields();
         HomePage.clickElementToOpenClasses();
-
     }
 
     @Test
@@ -33,12 +23,14 @@ public class ClassesTest extends TestBase {
         ClassesPage.clickElementToAddToFavourites();
         ClassesPage.clickElementFavourites();
 
-        boolean classPresentExpected = true;
-        boolean classPresentActual;
+        boolean expectedStatusIsClassPresentInFavourites = true;
+        boolean actualStatusIsClassPresentInFavourites;
 
-        classPresentActual = ClassesPage.checkIsClassPresentInFavourites(classPresentExpected);
+        actualStatusIsClassPresentInFavourites = ClassesPage.checkIsClassPresentInFavourites(
+                expectedStatusIsClassPresentInFavourites
+        );
 
-        Assert.assertTrue(classPresentActual);
+        Assert.assertEquals(actualStatusIsClassPresentInFavourites,expectedStatusIsClassPresentInFavourites);
     }
 
     @Test
@@ -53,9 +45,6 @@ public class ClassesTest extends TestBase {
         ClassesPage.clickSearchIcon();
         actualSearchResultMessage = ClassesPage.readSearchResultMessage();
 
-        Assert.assertEquals(actualSearchResultMessage,expectedSearchResultMessage);
-
+        Assert.assertEquals(actualSearchResultMessage, expectedSearchResultMessage);
     }
-
-
 }
