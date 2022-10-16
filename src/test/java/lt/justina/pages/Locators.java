@@ -15,6 +15,8 @@ public class Locators {
             public static By linkClasses = By.xpath("//a[@href='/classes/browse_all?page=1']");
 
             public static By spanCookies = By.xpath("//span[@class='md:text-xl font-body']");
+
+            public static By buttonAcceptCookies = By.xpath("//button[contains(text(), 'Accept')]");
         }
 
         public static class LogIn {
