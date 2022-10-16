@@ -30,17 +30,17 @@ public class PlaylistsPage extends TestBase {
     public static boolean checkIfPlaylistsAreFilteredAndDisplayed(boolean arePlaylistsFiltered) {
         try {
             List<Boolean> filteredList = Common.getStatusIfChosenElementsAreDisplayed(
-                    Locators.EkhartYoga.Playlists.linkFilteredGroundingBeginnersPlaylists);
+                    Locators.EkhartYoga.Playlists.linkFilteredPlaylists);
             if (filteredList.size() > 0)
-                return true;
+                return arePlaylistsFiltered;
             else {
                 return false;
             }
         } catch (org.openqa.selenium.StaleElementReferenceException ex) {
             List<Boolean> filteredList = Common.getStatusIfChosenElementsAreDisplayed(
-                    Locators.EkhartYoga.Playlists.linkFilteredGroundingBeginnersPlaylists);
+                    Locators.EkhartYoga.Playlists.linkFilteredPlaylists);
             if (filteredList.size() > 0)
-                return true;
+                return arePlaylistsFiltered;
             else {
                 return false;
             }
