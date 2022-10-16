@@ -48,17 +48,21 @@ public class Common {
 
     public static List<Boolean> getStatusIfChosenElementsAreDisplayed(By locator) {
         List<WebElement> elements = Common.getElements(locator);
-        List<Boolean> status = new ArrayList<>();
+        List<Boolean> statuses = new ArrayList<>();
 
         for (WebElement element : elements) {
-            status.add(element.isDisplayed());
+            statuses.add(element.isDisplayed());
         }
-        return status;
+        return statuses;
     }
 
     public static void waitForElementUntilVisibilityChanges(By locator) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(8));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(16));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public static boolean getStatusIfElementIsDisplayed(By locator) {
+        return Driver.getDriver().findElement(locator).isDisplayed();
     }
 }
