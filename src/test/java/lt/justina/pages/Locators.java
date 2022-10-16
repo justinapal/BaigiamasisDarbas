@@ -13,6 +13,8 @@ public class Locators {
             public static By dashboardHeader = By.xpath("(//h2)[1]");
 
             public static By linkClasses = By.xpath("//a[@href='/classes/browse_all?page=1']");
+
+            public static By spanCookies = By.xpath("//span[@class='md:text-xl font-body']");
         }
 
         public static class LogIn {
