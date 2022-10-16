@@ -37,6 +37,12 @@ public class ClassesPage {
         Common.clickElement(Locators.EkhartYoga.Classes.divSearchIcon);
     }
 
+    public static String readSearchResultMessage() {
+        return Common.getElementText(Locators.EkhartYoga.Classes.searchResultMessage);
+    }
+
+
+
    /* public static void clickSelectInputTeachers() {
         Common.clickElement(Locators.EkhartYoga.Classes.selectInputTeachers);
     }*/
