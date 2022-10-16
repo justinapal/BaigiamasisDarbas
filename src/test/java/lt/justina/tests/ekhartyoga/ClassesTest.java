@@ -1,5 +1,6 @@
 package lt.justina.tests.ekhartyoga;
 
+import lt.justina.pages.Locators;
 import lt.justina.pages.ekhartyoga.ClassesPage;
 import lt.justina.pages.ekhartyoga.HomePage;
 import lt.justina.pages.ekhartyoga.LogInPage;
@@ -35,8 +36,26 @@ public class ClassesTest extends TestBase {
         boolean classPresentExpected = true;
         boolean classPresentActual;
 
-        classPresentActual = ClassesPage.checkIsClassPresent(classPresentExpected);
+        classPresentActual = ClassesPage.checkIsClassPresentInFavourites(classPresentExpected);
 
         Assert.assertTrue(classPresentActual);
     }
+
+    @Test
+    private void testSearchInputByClasses() {
+        //ClassesPage.clickSelectInputTeachers();
+
+        String searchText = "Esther Ekhart";
+        String expectedSearchResultMessage = "Search results for \"Esther Ekhart\"";
+        String actualSearchResultMessage = "";
+
+        ClassesPage.enterSearchInput(searchText);
+        ClassesPage.clickSearchIcon();
+        actualSearchResultMessage = ClassesPage.readSearchResultMessage();
+
+        Assert.assertEquals(actualSearchResultMessage,expectedSearchResultMessage);
+
+    }
+
+
 }
