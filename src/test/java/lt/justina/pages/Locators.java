@@ -50,6 +50,10 @@ public class Locators {
             public static By divSearchIcon = By.xpath(
                     "//div[contains(@class, 'text-with-icon search-input-wrapper__icon search')]"
             );
+
+            public static By searchResultMessage = By.xpath(
+                    "//span[contains(text(), 'Search results for \"Esther Ekhart\"')]"
+            );
         }
     }
 }
