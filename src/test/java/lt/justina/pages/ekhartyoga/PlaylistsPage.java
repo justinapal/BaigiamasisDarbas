@@ -16,4 +16,8 @@ public class PlaylistsPage extends TestBase {
     public static void clickDropDownInputLevel() {
         Common.clickElement(Locators.EkhartYoga.Playlists.divInputLevels);
     }
+
+    public static void checkAttributeBeginner() {
+        Common.clickElement(Locators.EkhartYoga.Playlists.spanCollapsibleBeginner);
+    }
 }
