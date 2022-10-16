@@ -61,6 +61,11 @@ public class Locators {
                     "//span[contains(text(), 'Search results for \"Esther Ekhart\"')]"
             );
         }
+
+        public class Playlists{
+
+            public static By divInputFeeling = By.xpath("//div[@id='select-input-feeling']");
+        }
     }
 }
 
