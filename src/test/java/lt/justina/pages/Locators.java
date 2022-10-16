@@ -68,6 +68,8 @@ public class Locators {
 
             public static By spanCollapsibleGrounding = By.xpath("//span[normalize-space()='Grounding']");
 
+            public static By buttonCollapsibleApply = By.xpath("//button[normalize-space()='Apply']");
+
             public static By divInputLevels = By.xpath("//div[@id='select-input-levels']");
 
             public static By spanCollapsibleBeginner = By.xpath(
