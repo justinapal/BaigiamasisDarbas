@@ -45,5 +45,11 @@ public class ClassesPage {
             return false;
         }
     }
+
+    public static void clickElementToRemoveFromFavourites() {
+        Common.clickElement(
+                Locators.EkhartYoga.Classes.spanRemoveFromFavourites
+        );
+    }
 }
 
