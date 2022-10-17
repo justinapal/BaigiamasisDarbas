@@ -19,32 +19,36 @@ public class ClassesTest extends TestBase {
 
     @Test
     private void testAddingClassesToFavourites() {
+        boolean expectedStatusIsClassPresentInFavourites = true;
+        boolean actualStatusIsClassPresentInFavourites;
+
         ClassesPage.clickElementToGetClassesOptions();
         ClassesPage.clickElementToAddToFavourites();
         ClassesPage.clickElementFavourites();
-
-        boolean expectedStatusIsClassPresentInFavourites = true;
-        boolean actualStatusIsClassPresentInFavourites;
 
         actualStatusIsClassPresentInFavourites = ClassesPage.checkIsClassPresentInFavourites(
                 expectedStatusIsClassPresentInFavourites
         );
 
-        Assert.assertEquals(actualStatusIsClassPresentInFavourites,expectedStatusIsClassPresentInFavourites);
+        Assert.assertEquals(actualStatusIsClassPresentInFavourites, expectedStatusIsClassPresentInFavourites);
     }
 
     @Test
     private void testSearchInputByClasses() {
-        //ClassesPage.clickSelectInputTeachers();
-
         String searchText = "Esther Ekhart";
         String expectedSearchResultMessage = "Search results for \"Esther Ekhart\"";
         String actualSearchResultMessage = "";
+        boolean expectedStatusSearchResults = true;
+        boolean actualStatusSearchResults;
 
         ClassesPage.enterSearchInput(searchText);
         ClassesPage.clickSearchIcon();
         actualSearchResultMessage = ClassesPage.readSearchResultMessage();
 
         Assert.assertEquals(actualSearchResultMessage, expectedSearchResultMessage);
+
+        actualStatusSearchResults = ClassesPage.checkIfSearchResultsAreDisplayed(expectedStatusSearchResults);
+
+        Assert.assertEquals(actualStatusSearchResults, expectedStatusSearchResults);
     }
 }
