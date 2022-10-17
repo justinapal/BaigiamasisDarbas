@@ -4,6 +4,9 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
+test-output
+target/
+screenshots
 .idea
 .idea/modules.xml
 .idea/jarRepositories.xml
