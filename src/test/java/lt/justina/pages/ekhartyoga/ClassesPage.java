@@ -35,5 +35,15 @@ public class ClassesPage {
     public static String readSearchResultMessage() {
         return Common.getElementText(Locators.EkhartYoga.Classes.searchResultMessage);
     }
+
+    public static boolean checkIfSearchResultsAreDisplayed(boolean areSearchResultsDisplayed) {
+        List<Boolean> filteredList =
+                Common.getStatusIfChosenElementsAreDisplayed(Locators.EkhartYoga.Classes.spanAuthorPrefix);
+        if (filteredList.size() > 0)
+            return areSearchResultsDisplayed;
+        else {
+            return false;
+        }
+    }
 }
 
