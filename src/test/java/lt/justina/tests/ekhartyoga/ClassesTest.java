@@ -1,9 +1,7 @@
 package lt.justina.tests.ekhartyoga;
 
-import lt.justina.pages.Locators;
 import lt.justina.pages.ekhartyoga.ClassesPage;
 import lt.justina.pages.ekhartyoga.HomePage;
-import lt.justina.pages.ekhartyoga.LogInPage;
 import lt.justina.tests.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -18,7 +16,7 @@ public class ClassesTest extends TestBase {
     }
 
     @Test
-    private void testAddingClassesToFavourites() {
+    private void testAddingRemovingClassesToFromFavourites() {
         boolean expectedStatusIsClassPresentInFavourites = true;
         boolean actualStatusIsClassPresentInFavourites;
 
@@ -26,11 +24,19 @@ public class ClassesTest extends TestBase {
         ClassesPage.clickElementToAddToFavourites();
         ClassesPage.clickElementFavourites();
 
-        actualStatusIsClassPresentInFavourites = ClassesPage.checkIsClassPresentInFavourites(
-                expectedStatusIsClassPresentInFavourites
-        );
+        actualStatusIsClassPresentInFavourites =
+                ClassesPage.checkIsClassPresentInFavourites(expectedStatusIsClassPresentInFavourites);
 
         Assert.assertEquals(actualStatusIsClassPresentInFavourites, expectedStatusIsClassPresentInFavourites);
+
+        ClassesPage.clickElementToGetClassesOptions();
+        ClassesPage.clickElementToRemoveFromFavourites();
+        ClassesPage.clickElementFavourites();
+
+        actualStatusIsClassPresentInFavourites =
+                ClassesPage.checkIsClassPresentInFavourites(expectedStatusIsClassPresentInFavourites);
+
+        Assert.assertTrue(actualStatusIsClassPresentInFavourites);
     }
 
     @Test
