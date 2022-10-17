@@ -49,6 +49,9 @@ public class Locators {
             public static By linkClassInFavourites = By.xpath(
                     "//a[@id='card-item-485e379e-6d2f-434f-826a-7d27412977fa']");
 
+            public static By spanRemoveFromFavourites = By.xpath(
+                    "//span[normalize-space()='Remove from favourites']");
+
             public static By inputSearch = By.xpath("//input[@placeholder='Search']");
 
             public static By divSearchIcon = By.xpath(
@@ -63,7 +66,7 @@ public class Locators {
                     "//div[@class='author']//span[@class='author-prefix']");
         }
 
-        public class Playlists{
+        public class Playlists {
 
             public static By divInputFeeling = By.xpath("//div[@id='select-input-feeling']");
 
