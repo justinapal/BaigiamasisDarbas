@@ -4,6 +4,7 @@ import lt.justina.pages.Common;
 import lt.justina.pages.Locators;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class ClassesPage {
     public static void clickElementToGetClassesOptions() {
@@ -21,7 +22,13 @@ public class ClassesPage {
     }
 
     public static boolean checkIsClassPresentInFavourites(boolean isClassPresent) {
-        return Common.getStatusIfElementIsDisplayed(Locators.EkhartYoga.Classes.linkClassInFavourites);
+        try {
+            Common.getStatusIfElementIsDisplayed(Locators.EkhartYoga.Classes.linkClassInFavourites);
+            return isClassPresent;
+        } catch (NoSuchElementException e) {
+            isClassPresent = false;
+        }
+            return isClassPresent;
     }
 
     public static void enterSearchInput(String searchText) {
