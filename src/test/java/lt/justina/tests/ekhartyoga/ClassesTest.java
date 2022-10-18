@@ -21,7 +21,9 @@ public class ClassesTest extends TestBase {
         boolean actualStatusIsClassPresentInFavourites;
 
         ClassesPage.clickElementToGetClassesOptions();
+        ClassesPage.sleep(3000);
         ClassesPage.clickElementToAddToFavourites();
+        ClassesPage.sleep(3000);
         ClassesPage.clickElementFavourites();
 
         actualStatusIsClassPresentInFavourites =
@@ -30,8 +32,9 @@ public class ClassesTest extends TestBase {
         Assert.assertEquals(actualStatusIsClassPresentInFavourites, expectedStatusIsClassPresentInFavourites);
 
         ClassesPage.clickElementToGetClassesOptions();
+        ClassesPage.sleep(3000);
         ClassesPage.clickElementToRemoveFromFavourites();
-        ClassesPage.clickElementFavourites();
+        ClassesPage.sleep(3000);
 
         actualStatusIsClassPresentInFavourites =
                 ClassesPage.checkIsClassPresentInFavourites(expectedStatusIsClassPresentInFavourites);
@@ -54,6 +57,7 @@ public class ClassesTest extends TestBase {
         Assert.assertEquals(actualSearchResultMessage, expectedSearchResultMessage);
 
         actualStatusSearchResults = ClassesPage.checkIfSearchResultsAreDisplayed(expectedStatusSearchResults);
+        ClassesPage.sleep(3000);
 
         Assert.assertEquals(actualStatusSearchResults, expectedStatusSearchResults);
     }

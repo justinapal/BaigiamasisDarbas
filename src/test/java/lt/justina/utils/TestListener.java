@@ -13,7 +13,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class TestListener implements ITestListener {
-
     @Override
     public void onTestFailure(ITestResult result) {
         takeScreenshot();

@@ -18,7 +18,7 @@ public class PlaylistsTest extends TestBase {
     @Test
     private void testSearchingPlaylistsByDropDownAttributes() {
         boolean expectedStatusArePlaylistsFiltered = true;
-        boolean actualStatusPlaylistsFiltered;
+        boolean actualStatusArePlaylistsFiltered;
 
         PlaylistsPage.clickDropDownInputFeeling();
         PlaylistsPage.checkAttributeGrounding();
@@ -27,9 +27,9 @@ public class PlaylistsTest extends TestBase {
         PlaylistsPage.checkAttributeBeginner();
         PlaylistsPage.clickButtonApply();
 
-        actualStatusPlaylistsFiltered =
+        actualStatusArePlaylistsFiltered =
                 PlaylistsPage.checkIfPlaylistsAreFilteredAndDisplayed(expectedStatusArePlaylistsFiltered);
 
-        Assert.assertEquals(actualStatusPlaylistsFiltered, expectedStatusArePlaylistsFiltered);
+        Assert.assertEquals(actualStatusArePlaylistsFiltered, expectedStatusArePlaylistsFiltered);
     }
 }

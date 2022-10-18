@@ -10,7 +10,7 @@ public class LogInPage {
     }
 
     public static void enterInputPassword(String passwordInput) {
-        Common.sendKeysToElement(passwordInput,Locators.EkhartYoga.LogIn.inputPassword);
+        Common.sendKeysToElement(passwordInput, Locators.EkhartYoga.LogIn.inputPassword);
     }
 
     public static void clickSignInButtonAfterCompletedInputFields() {

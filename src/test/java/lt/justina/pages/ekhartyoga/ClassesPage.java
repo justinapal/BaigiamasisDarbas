@@ -5,6 +5,7 @@ import lt.justina.pages.Locators;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeoutException;
 
 public class ClassesPage {
     public static void clickElementToGetClassesOptions() {
@@ -28,7 +29,13 @@ public class ClassesPage {
         } catch (NoSuchElementException e) {
             isClassPresent = false;
         }
-            return isClassPresent;
+        return false;
+    }
+
+    public static void clickElementToRemoveFromFavourites() {
+        Common.clickElement(
+                Locators.EkhartYoga.Classes.spanRemoveFromFavourites
+        );
     }
 
     public static void enterSearchInput(String searchText) {
@@ -46,6 +53,7 @@ public class ClassesPage {
     public static boolean checkIfSearchResultsAreDisplayed(boolean areSearchResultsDisplayed) {
         List<Boolean> filteredList =
                 Common.getStatusIfChosenElementsAreDisplayed(Locators.EkhartYoga.Classes.spanAuthorPrefix);
+
         if (filteredList.size() > 0)
             return areSearchResultsDisplayed;
         else {
@@ -53,10 +61,9 @@ public class ClassesPage {
         }
     }
 
-    public static void clickElementToRemoveFromFavourites() {
-        Common.clickElement(
-                Locators.EkhartYoga.Classes.spanRemoveFromFavourites
-        );
+    public static void sleep(int millis) {
+        Common.sleep(millis);
     }
 }
+
 

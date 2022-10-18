@@ -1,7 +1,9 @@
 package lt.justina.pages;
 
+import jdk.jfr.Timespan;
 import lt.justina.utils.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -23,6 +25,7 @@ public class Common {
     }
 
     public static void openUrl(String url) {
+        setUpDriver();
         Driver.getDriver().get(url);
     }
 
@@ -57,12 +60,20 @@ public class Common {
     }
 
     public static void waitForElementUntilVisibilityChanges(By locator) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(16));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
 
     public static boolean getStatusIfElementIsDisplayed(By locator) {
         return Driver.getDriver().findElement(locator).isDisplayed();
+    }
+
+    public static void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

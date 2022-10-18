@@ -14,12 +14,14 @@ public class Driver {
     public static void setDriver() {
 
         WebDriverManager.chromedriver().setup();
+
         driver.set(new ChromeDriver(setUpOptions()));
         driver.get().manage().deleteAllCookies();
         driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     public static WebDriver getDriver() {
+
         return driver.get();
     }
 
@@ -30,6 +32,7 @@ public class Driver {
         return options;
     }
 
-    public static void close() {Driver.getDriver().quit();
+    public static void close() {
+        Driver.getDriver().quit();
     }
 }
