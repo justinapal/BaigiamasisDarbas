@@ -81,8 +81,7 @@ public class Locators {
             );
 
             public static By linkFilteredPlaylists = By.xpath(
-                    "//a[@class='card-item card-list__item card-item--is-loaded card-item--media-top" +
-                            " card-item--use-media-aspect-ratio card-item--playlists']");
+                    "//a[contains(@class,'card-item--media-top')]");
         }
     }
 }

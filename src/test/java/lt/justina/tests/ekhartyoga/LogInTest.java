@@ -24,14 +24,13 @@ public class LogInTest extends TestBase {
     private void testLogInValidInput() {
         String emailInput = "pal.justina@gmail.com";
         String passwordInput = "insane1169";
+        String expectedUsernameGreetingMessage = "Namaste, Justina";
+        String actualUsernameGreetingMessage = "";
 
         HomePage.clickSignInButton();
         LogInPage.enterInputEmail(emailInput);
         LogInPage.enterInputPassword(passwordInput);
         LogInPage.clickSignInButtonAfterCompletedInputFields();
-
-        String expectedUsernameGreetingMessage = "Namaste, Justina";
-        String actualUsernameGreetingMessage = "";
 
         actualUsernameGreetingMessage = HomePage.readUsernameGreetingMessage();
 
@@ -42,14 +41,13 @@ public class LogInTest extends TestBase {
     private void testLogInInvalidInput() {
         String emailInputInvalid = "t*op.mail.com";
         String passwordInput = "insane1169";
+        String expectedMessage = "Invalid username or password.";
+        String actualMessage = "";
 
         HomePage.clickSignInButton();
         LogInPage.enterInputEmail(emailInputInvalid);
         LogInPage.enterInputPassword(passwordInput);
         LogInPage.clickSignInButtonAfterCompletedInputFields();
-
-        String expectedMessage = "Invalid username or password.";
-        String actualMessage = "";
 
         actualMessage = LogInPage.readMessageInvalidInput();
 
