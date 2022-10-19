@@ -37,7 +37,7 @@ public class Locators {
         public class Classes {
 
             public static By optionsButtonDropDown = By.xpath(
-                    "(//div[@id='options-button-485e379e-6d2f-434f-826a-7d27412977fa'])[1]");
+                    "(//div[@class='card-overlay__header']//div[@class='right-side'])[1]//button");
 
             public static By spanAddToFavourites =
                     By.xpath(
@@ -47,7 +47,7 @@ public class Locators {
             public static By linkFavourites = By.xpath("//a[contains(text(), 'Favourites')]");
 
             public static By linkClassInFavourites = By.xpath(
-                    "//a[@id='card-item-485e379e-6d2f-434f-826a-7d27412977fa']");
+                    "//a[contains(@id,'card-item')]");
 
             public static By spanRemoveFromFavourites = By.xpath(
                     "//span[normalize-space()='Remove from favourites']");
@@ -81,8 +81,7 @@ public class Locators {
             );
 
             public static By linkFilteredPlaylists = By.xpath(
-                    "//a[@class='card-item card-list__item card-item--is-loaded card-item--media-top" +
-                            " card-item--use-media-aspect-ratio card-item--playlists']");
+                    "//a[contains(@class,'card-item--media-top')]");
         }
     }
 }

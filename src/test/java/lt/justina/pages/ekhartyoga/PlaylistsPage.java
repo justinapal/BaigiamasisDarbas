@@ -3,11 +3,16 @@ package lt.justina.pages.ekhartyoga;
 import lt.justina.pages.Common;
 import lt.justina.pages.Locators;
 import lt.justina.tests.TestBase;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 
 import java.util.List;
 
-public class PlaylistsPage extends TestBase {
+import static lt.justina.pages.ekhartyoga.ClassesPage.sleep;
+
+public class PlaylistsPage {
     public static void clickDropDownInputFeeling() {
+
         Common.clickElement(Locators.EkhartYoga.Playlists.divInputFeeling);
     }
 
@@ -36,7 +41,7 @@ public class PlaylistsPage extends TestBase {
             else {
                 return false;
             }
-        } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+        } catch (NoSuchElementException | StaleElementReferenceException ex) {
             List<Boolean> filteredList = Common.getStatusIfChosenElementsAreDisplayed(
                     Locators.EkhartYoga.Playlists.linkFilteredPlaylists);
             if (filteredList.size() > 0)
