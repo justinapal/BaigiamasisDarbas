@@ -1,12 +1,10 @@
 package lt.justina.pages;
 
-import jdk.jfr.Timespan;
 import lt.justina.utils.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -30,6 +28,7 @@ public class Common {
     }
 
     public static WebElement getElement(By locator) {
+        checkIfElementDisplayed(locator);
         return Driver.getDriver().findElement(locator);
     }
 
@@ -50,6 +49,9 @@ public class Common {
     }
 
     public static List<Boolean> getStatusIfChosenElementsAreDisplayed(By locator) {
+
+        checkIfElementDisplayed(locator);
+
         List<WebElement> elements = Common.getElements(locator);
         List<Boolean> statuses = new ArrayList<>();
 
@@ -59,13 +61,29 @@ public class Common {
         return statuses;
     }
 
+    public static boolean checkIfElementDisplayed(By locator) {
+        WebElement element = Driver.getDriver().findElement(locator);
+        int seconds = 5;
+
+        for (int count : new int[seconds]) {
+            try {
+                element.isDisplayed();
+                return true;
+            } catch (NoSuchElementException | StaleElementReferenceException ex) {
+                sleep(1000);
+            }
+        }
+
+        return false;
+    }
+
     public static void waitForElementUntilVisibilityChanges(By locator) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public static boolean getStatusIfElementIsDisplayed(By locator) {
+        waitForElementUntilVisibilityChanges(locator);
         return Driver.getDriver().findElement(locator).isDisplayed();
     }
 
