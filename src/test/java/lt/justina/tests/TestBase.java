@@ -17,8 +17,8 @@ public class TestBase {
     @BeforeMethod
     public void setUp() {
 
-        String emailInput = "pal.justina@gmail.com";
-        String passwordInput = "insane1169";
+        String emailInput = "karengoto94@gmail.com";
+        String passwordInput = "Topmail852!";
 
         HomePage.open("https://www.ekhartyoga.com/");
 

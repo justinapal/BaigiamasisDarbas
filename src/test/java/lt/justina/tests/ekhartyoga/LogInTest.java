@@ -22,9 +22,9 @@ public class LogInTest extends TestBase {
 
     @Test
     private void testLogInValidInput() {
-        String emailInput = "pal.justina@gmail.com";
-        String passwordInput = "insane1169";
-        String expectedUsernameGreetingMessage = "Namaste, Justina";
+        String emailInput = "karengoto94@gmail.com";
+        String passwordInput = "Topmail852!";
+        String expectedUsernameGreetingMessage = "Namaste, Karen";
         String actualUsernameGreetingMessage = "";
 
         HomePage.clickSignInButton();
