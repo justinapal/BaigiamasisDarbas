@@ -34,6 +34,8 @@ public class Locators {
             );
 
             public static By spanUsernameErrorMessage = By.xpath("//span[@id='Username-error']");
+
+            public static By spanPasswordErrorMessage = By.xpath("//span[@id='password-field-error']");
         }
 
         public class Classes {
