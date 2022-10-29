@@ -13,12 +13,20 @@ public class LogInPage {
         Common.sendKeysToElement(passwordInput, Locators.EkhartYoga.LogIn.inputPassword);
     }
 
-    public static void clickSignInButtonAfterCompletedInputFields() {
+    public static void clickSignInButton() {
         Common.clickElement(Locators.EkhartYoga.LogIn.buttonLogin);
     }
 
     public static String readMessageInvalidInput() {
         return Common.getElementText(Locators.EkhartYoga.LogIn.listInvalidCredentials);
+    }
+
+    public static String readMessageUnderEmailField() {
+        return Common.getElementText(Locators.EkhartYoga.LogIn.spanUsernameErrorMessage);
+    }
+
+    public static String readMessageUnderPasswordField() {
+        return Common.getElementText(Locators.EkhartYoga.LogIn.spanPasswordErrorMessage);
     }
 }
 
