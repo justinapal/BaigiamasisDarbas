@@ -32,6 +32,8 @@ public class Locators {
             public static By listInvalidCredentials = By.xpath(
                     "//li[text()='Invalid username or password.']"
             );
+
+            public static By spanUsernameErrorMessage = By.xpath("//span[@id='Username-error']");
         }
 
         public class Classes {
