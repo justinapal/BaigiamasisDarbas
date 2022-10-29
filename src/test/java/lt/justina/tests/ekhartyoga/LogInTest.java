@@ -65,4 +65,19 @@ public class LogInTest extends TestBase {
 
         Assert.assertEquals(actualMessage, expectedMessage);
     }
+
+    @Test
+    private void testLogInPasswordFieldLeftBlank() {
+        String validEmailInput = "karengoto94@gmail.com";
+        String expectedMessage = "Password is required";
+        String actualMessage = "";
+
+        HomePage.clickSignInButton();
+        LogInPage.enterInputEmail(validEmailInput);
+        LogInPage.clickSignInButton();
+
+        actualMessage = LogInPage.readMessageUnderPasswordField();
+
+        Assert.assertEquals(actualMessage, expectedMessage);
+    }
 }
