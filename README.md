@@ -1,6 +1,6 @@
 ## Baigiamasis Darbas
 
-## [Testing website www.ekhartyoga](www.ekhartyoga.com)
+## [Automated functional testing for https://www.ekhartyoga.com/](www.ekhartyoga.com)
 
 ## Test Scenarios
 
